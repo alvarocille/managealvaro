@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="view_managealvaro_technology_tree">
+            <field name="name">view_managealvaro_technology_tree</field>
+            <field name="model">managealvaro.technology</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="photo" widget="image"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="view_managealvaro_technology_form">
+            <field name="name">view_managealvaro_technology_form</field>
+            <field name="model">managealvaro.technology</field>
+            <field name="arch" type="xml">
+                <form string="form_technology">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="task_ids"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="photo" widget="image"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions -->
+        <record model="ir.actions.act_window" id="action_managealvaro_technology_form">
+            <field name="name">Technology</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">managealvaro.technology</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Technology
+                </p>
+                <p>Click <strong>'Crear'</strong> para añadir nuevos elementos.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menú raiz -->
+        <menuitem name="Manage" id="menu_managealvaro_root"/>
+
+        <!-- Segundo nivel -->
+        <menuitem name="Management" id="menu_managealvaro"
+                  parent="menu_managealvaro_root"/>
+
+        <!-- Tercer nivel -->
+        <menuitem name="Technology" id="menu_managealvaro_technology"
+                  parent="menu_managealvaro" action="action_managealvaro_technology_form"/>
+    </data>
+</odoo>

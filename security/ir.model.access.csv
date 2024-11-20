@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_managealvaro_history,managealvaro.history,model_managealvaro_history,base.group_user,1,1,1,1
+access_managealvaro_project,managealvaro.project,model_managealvaro_project,base.group_user,1,1,1,1
+access_managealvaro_sprint,managealvaro.sprint,model_managealvaro_sprint,base.group_user,1,1,1,1
+access_managealvaro_task,managealvaro.task,model_managealvaro_task,base.group_user,1,1,1,1
+access_managealvaro_technology,managealvaro.technology,model_managealvaro_technology,base.group_user,1,1,1,1

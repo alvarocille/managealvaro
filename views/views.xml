@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="managealvaro.list">
+      <field name="name">managealvaro list</field>
+      <field name="model">managealvaro.managealvaro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="managealvaro.action_window">
+      <field name="name">managealvaro window</field>
+      <field name="res_model">managealvaro.managealvaro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="managealvaro.action_server">
+      <field name="name">managealvaro server</field>
+      <field name="model_id" ref="model_managealvaro_managealvaro"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="managealvaro" id="managealvaro.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="managealvaro.menu_1" parent="managealvaro.menu_root"/>
+    <menuitem name="Menu 2" id="managealvaro.menu_2" parent="managealvaro.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="managealvaro.menu_1_list" parent="managealvaro.menu_1"
+              action="managealvaro.action_window"/>
+    <menuitem name="Server to list" id="managealvaro" parent="managealvaro.menu_2"
+              action="managealvaro.action_server"/>
+-->
+  </data>
+</odoo>
