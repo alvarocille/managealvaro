@@ -30,8 +30,10 @@
 
                             <group name="group_right">
                                 <field name="start_date"/>
+                                <field name="duration"/>
                                 <field name="end_date"/>
                                 <field name="task_id"/>
+                                <field name="project_id"/>
                             </group>
                         </group>
                     </sheet>
