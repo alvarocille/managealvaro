@@ -6,7 +6,10 @@ class developer(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
-    technologies = fields.Many2many('manage.technology', string='Technologies',
+    is_dev = fields.Boolean(string='Desarrollador', default=True)
+
+    technologies_id = fields.Many2many('managealvaro.technology', string='Technologies',
                                     relation = 'developer_technologies',
                                     column1='developer_id',
                                     column2='technologies_id')
+                                    

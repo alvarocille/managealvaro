@@ -4,3 +4,5 @@ access_managealvaro_project,managealvaro.project,model_managealvaro_project,base
 access_managealvaro_sprint,managealvaro.sprint,model_managealvaro_sprint,base.group_user,1,1,1,1
 access_managealvaro_task,managealvaro.task,model_managealvaro_task,base.group_user,1,1,1,1
 access_managealvaro_technology,managealvaro.technology,model_managealvaro_technology,base.group_user,1,1,1,1
+access_managealvaro_notification,managealvaro.notification,model_managealvaro_notification,base.group_user,1,1,1,1
+

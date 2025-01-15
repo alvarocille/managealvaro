@@ -1,61 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- form -->
-        <record model="ir.ui.view" id="view_managealvaro_developer_form">
-            <field name="name">view_managealvaro_developer_form</field>
-            <field name="model">res.partner</field>
-            <field name="arch" type="xml">
-                <form string="form_developer">
-                    <sheet>
-                        <group name="group_top">
-                            <group name="group_left">
-                                <field name="technologies"/>
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <!-- actions -->
-        <record model="ir.actions.act_window" id="action_managealvaro_developer_form">
+        <record model="ir.actions.act_window" id="managealvaro.accion_developer_window">
             <field name="name">Developer</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Developer
-                </p>
-                <p>Click <strong>'Crear'</strong> para añadir nuevos elementos.
-                </p>
+            <field name="domain">[('is_dev', '=', True)]</field>
+        </record>
+
+        <!-- VISTA PERSONALIZADA -->
+        <record model="ir.ui.view" id="managealvaro.devs_partner_form">
+            <field name="name">managealvaro devs form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+                    <page name="devs" string="Devs">
+                        <group>
+                            <group>
+                                <field name="technologies_id" string="Tecnologías"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
             </field>
         </record>
 
-        <record model="ir.actions.act_window.view" id="action_view_managealvaro_developer_tree">
+        <record model="ir.actions.act_window.view" id="managealvaro.action_view_developer_tree">
             <field name="sequence" eval="1"></field>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="base.view_partner_tree"></field>
-            <field name="act_window_id" ref="action_managealvaro_developer_form"></field>
+            <field name="act_window_id" ref="managealvaro.accion_developer_window"></field>
         </record>
 
-        <record model="ir.actions.act_window.view" id="action_view_managealvaro_developer_form">
+        <record model="ir.actions.act_window.view" id="managealvaro.action_view_developer_form">
             <field name="sequence" eval="2"></field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_managealvaro_developer_form"></field>
-            <field name="act_window_id" ref="action_managealvaro_developer_form"></field>
+            <field name="view_id" ref="managealvaro.devs_partner_form"></field>
+            <field name="act_window_id" ref="managealvaro.accion_developer_window"></field>
         </record>
 
-        <!-- Menú raiz -->
-        <menuitem name="Manage" id="menu_managealvaro_root"/>
-
-        <!-- Segundo nivel -->
-        <menuitem name="Management" id="menu_managealvaro"
-                  parent="menu_managealvaro_root"/>
-
-        <!-- Tercer nivel -->
-        <menuitem name="Devs" id="menu_managealvaro_developer"
-                  parent="menu_managealvaro" action="action_managealvaro_developer_form"/>
+        <menuitem name="Devs" id="managealvaro.menu_1_devs_list"
+                  parent="menu_managealvaro"
+                  action="managealvaro.accion_developer_window"/>
     </data>
 </odoo>

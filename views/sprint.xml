@@ -56,15 +56,8 @@
             </field>
         </record>
 
-        <!-- Menú raiz -->
-        <menuitem name="Manage" id="menu_managealvaro_root"/>
-
-        <!-- Segundo nivel -->
-        <menuitem name="Management" id="menu_managealvaro"
-                  parent="menu_managealvaro_root"/>
-
-        <!-- Tercer nivel -->
-        <menuitem name="Sprint" id="menu_managealvaro_sprint"
-                  parent="menu_managealvaro" action="action_managealvaro_sprint_form"/>
+        <menuitem name="Sprints" id="menu_managealvaro_sprint"
+            parent="menu_managealvaro"
+            action="action_managealvaro_sprint_form"/>
     </data>
 </odoo>

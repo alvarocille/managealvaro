@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "Álvaro Cilleruelo Sinovas",
+    'website': "https://www.cillesino.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
@@ -32,10 +32,14 @@
         'views/project.xml',
         'views/history.xml',
         'views/technology.xml',
-        'views/developer.xml'
+        'views/developer.xml',
+        'views/task.xml',
+        'views/notification.xml',
+        'data/cron_data.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
 }
+
